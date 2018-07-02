@@ -1,0 +1,43 @@
+{
+  "name": "babel-preset-env-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rimraf lib/* dist/*",
+    "eslint": "eslint src",
+    "watch": "webpack --config build/webpack.config.dev.js -w",
+    "build:dev": "webpack --config build/webpack.config.dev.js",
+    "build:prod": "webpack --config build/webpack.config.prod.js",
+    "start": "npm-run-all  clean watch",
+    "build": "npm-run-all  clean build:prod",
+    "setup": "node build/setup"
+  },
+  "author": "nobo<nobo.zhou@foxmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^8.6.4",
+    "css-loader": "^0.28.11",
+    "extract-loader": "^2.0.1",
+    "file-loader": "^1.1.11",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "less": "^3.0.4",
+    "less-loader": "^4.1.0",
+    "node-sass": "^4.9.0",
+    "postcss-loader": "^2.1.5",
+    "postcss-preset-env": "^5.2.1",
+    "postcss-utilities": "^0.8.0",
+    "precss": "^3.1.2",
+    "raw-loader": "^0.5.1",
+    "sass-loader": "^7.0.3",
+    "style-loader": "^0.21.0",
+    "webpack": "^4.14.0",
+    "webpack-cli": "^3.0.8"
+  },
+  "dependencies": {},
+  "browserslist": [
+    "last 3 versions"
+  ]
+}
