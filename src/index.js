@@ -20,3 +20,7 @@ console.log(scss);
 const html = require('./index.html');
 
 console.log(html);
+
+import("./async").then( function(util){
+    console.log(util)
+} )

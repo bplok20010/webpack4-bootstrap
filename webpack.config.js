@@ -5,9 +5,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     devtool: "source-map",
     mode: "development", // none development production
-    entry: './src/index.js',
+    entry: {
+        a:'./src/index.js',
+        b: './src/b.js'
+    },
     output: {
-        filename: 'main.js',
+        filename: '[name].[hash].js',
         path: path.resolve(__dirname, 'dist')
     },
     module: {
@@ -50,9 +53,32 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             //chunks: ["a"],
-            filename: 'index.html', //默认是index.html
+            filename: 'a.html', //默认是index.html
+            title: "Learn Webpack",
+            //template: "./src/index.html"
+        }),
+        new HtmlWebpackPlugin({
+            //chunks: ["b"],
+            filename: 'b.html', //默认是index.html
             title: "Learn Webpack",
             //template: "./src/index.html"
         })
-    ]
+    ],
+    optimization:{
+        runtimeChunk : 'single',
+        splitChunks :{
+            name: 'common',
+            chunks: 'all',
+            minSize: 1,
+            cacheGroups: {
+                vendor: {
+                  name: 'vendor',
+                  chunks: 'initial',
+                  priority: -10,
+                  reuseExistingChunk: false,
+                  test: /node_modules\/(.*)\.js/
+                }
+              }
+        }
+    }
 }
