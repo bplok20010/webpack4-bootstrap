@@ -7,6 +7,6 @@ import(
     './async1'
 );
 
-module.exports = {
+export default {
     isFunction: function() {}
 }

@@ -1,5 +1,5 @@
 import React from 'react';
 
-module.exports = {
+export default {
     isFunction: function() {}
 }

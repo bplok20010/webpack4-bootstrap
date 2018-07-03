@@ -6,7 +6,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 let i = 1;
 
 module.exports = {
-    devtool: 'eval', //测试环境用eval 提高编译速度 //"source-map",
+    devtool: 'source-map', //测试环境用eval 提高编译速度 //"source-map",
     mode: "development", // none development production
     entry: {
         a: './src/index.js',
@@ -57,11 +57,11 @@ module.exports = {
         new CleanWebpackPlugin('dist'),
         new HtmlWebpackPlugin({
             filename: "a.html",
-            excludeChunks: ['b', 'styles']
+            excludeChunks: ['b']
         }),
         new HtmlWebpackPlugin({
             filename: "b.html",
-            excludeChunks: ['a', 'styles']
+            excludeChunks: ['a']
         }),
         new MiniCssExtractPlugin({
             filename: "[name].css",
@@ -98,8 +98,8 @@ module.exports = {
                 styles: { //test
                     name: 'styles',
                     test: /\.(css|less|scss)$/,
-                    chunks: 'all',
-                    enforce: true
+                    //chunks: 'all',
+                    //enforce: true
                 }
             }
         }

@@ -2,6 +2,6 @@ import React from 'react';
 
 import("./async2")
 
-module.exports = {
+export default {
     isFunction: function() {}
 }

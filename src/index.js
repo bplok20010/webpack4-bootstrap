@@ -3,8 +3,8 @@
  import $ from 'jquery';
  import three from 'three.js';
  
-const async1 = require('./components/async1');
-const async2 = require('./components/async2');
+// const async1 = require('./components/async1');
+// const async2 = require('./components/async2');
 
 
 const util = require('./util');
@@ -30,6 +30,6 @@ const html = require('./index.html');
 
 console.log(html);
 
-import("./async").then(function(util) {
-    console.log(util)
-})
+// import("./async").then(function(util) {
+//     console.log(util)
+// })

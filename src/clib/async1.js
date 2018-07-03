@@ -11216,6 +11216,6 @@ console.log('asdfadf');
 console.log('asdfadf');
 console.log('asdfadf');
 console.log('asdfadf');
-module.exports = {
+export default {
     isFunction: function() {}
 }
