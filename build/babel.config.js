@@ -1,5 +1,5 @@
 module.exports = {
-    "babelrc": false,
+    //"babelrc": false,
     "presets": [
         "env", "react", "flow"
     ],
@@ -15,7 +15,7 @@ module.exports = {
         "transform-object-rest-spread",
         "transform-react-jsx",
         "transform-regenerator",
-        "transform-proto-to-assign",
+        // "transform-proto-to-assign",//IE10以下不支持__proto__
         "transform-runtime"
     ]
 }

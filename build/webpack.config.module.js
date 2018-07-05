@@ -5,6 +5,11 @@ const babelConfig = require('./babel.config');
 const rules = [
     {
         test: /\.jsx?$/,
+        exclude: [
+            /node_modules\/html-web/m,
+            /node_modules\/core-js\//m,
+            /node_modules\/regenerator-runtime\//m
+            ],
         use: [
             {
                 loader: 'babel-loader',
