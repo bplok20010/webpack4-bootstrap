@@ -17,7 +17,7 @@
 /******/ 			l: false,
 /******/ 			exports: {__t: 1}
 /******/ 		};
-/******/		
+/******/		//循环依赖问题？？
 /******/ 		// Execute the module function
 /******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
 /******/		if(isTest) console.log(module.exports);
