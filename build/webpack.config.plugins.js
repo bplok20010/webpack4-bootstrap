@@ -10,10 +10,10 @@ module.exports = [
     //     from: path.resolve(__dirname,"src/assets"),
     //     to: './dist'
     // }),
-    new HtmlWebpackPlugin({
-        filename: "app.html",
-        //excludeChunks: ['b']
-    }),
+    // new HtmlWebpackPlugin({
+    //     filename: "app.html",
+    //     //excludeChunks: ['b']
+    // }),
     new MiniCssExtractPlugin({
         filename: "[name].[hash].css",
     })

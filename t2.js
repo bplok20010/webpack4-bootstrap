@@ -5,12 +5,12 @@
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
 				var isTest = moduleId == "./node_modules/core-js/library/modules/_export.js";
-/******/		
+/******/		console.log( 'call: ', moduleId );
 /******/ 		// Check if module is in cache
 /******/ 		if(installedModules[moduleId]) {
 /******/ 			return installedModules[moduleId].exports;
 /******/ 		}
-				if(isTest) console.log('===============fuck start=============')
+				//if(isTest) console.log('===============fuck start=============')
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = installedModules[moduleId] = {
 /******/ 			i: moduleId,
@@ -20,10 +20,10 @@
 /******/		//循环依赖问题？？
 /******/ 		// Execute the module function
 /******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-/******/		if(isTest) console.log(module.exports);
+/******/		//if(isTest) console.log(module.exports);
 /******/ 		// Flag the module as loaded
 /******/ 		module.l = true;
-/******/		if(isTest) console.log('===============fuck end=============')
+/******/		//if(isTest) console.log('===============fuck end=============')
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
