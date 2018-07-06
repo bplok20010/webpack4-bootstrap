@@ -2,12 +2,27 @@ const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const babelConfig = require('./babel.config');
 
-const rules = [{
+const rules = [
+    {
+        enforce: "pre",
         test: /\.jsx?$/,
-        // exclude: [
-        //     /node_modules[\\/]core-js/m,
-        //     /node_modules[\\/]babel-/m,
-        // ],
+        exclude: /node_modules/,
+        loader: "eslint-loader",
+        options:{
+            //emitWarning: true,
+            //emitError: true,
+            //failOnWarning: false,
+            //failOnError: true,
+            useEslintrc: false,
+            // configFile: path.join(__dirname, "eslint_conf.js")
+            configFile: path.resolve(__dirname , "./eslint.config.js")
+        }
+    },{
+        test: /\.jsx?$/,
+        exclude: [
+            /node_modules[\\/]core-js/m, //解决$export错误，不应该再对core-js转码，不然出现循环依赖问题
+            /node_modules[\\/]babel-runtime/m,
+        ],
         use: [{
             loader: 'babel-loader',
             options: babelConfig
@@ -21,7 +36,7 @@ const rules = [{
                 loader: "postcss-loader",
                 options: {
                     config: {
-                        path: __dirname + '/postcss.config.js'
+                        path: path.resolve(__dirname , './postcss.config.js')
                     }
                 }
             }
@@ -35,7 +50,7 @@ const rules = [{
                 loader: "postcss-loader",
                 options: {
                     config: {
-                        path: __dirname + '/postcss.config.js'
+                        path: path.resolve(__dirname , './postcss.config.js')
                     }
                 }
             },
@@ -50,7 +65,7 @@ const rules = [{
                 loader: "postcss-loader",
                 options: {
                     config: {
-                        path: __dirname + '/postcss.config.js'
+                        path: path.resolve(__dirname , './postcss.config.js')
                     }
                 }
             },
@@ -79,6 +94,18 @@ const rules = [{
     {
         test: /\.html?/,
         use: ['raw-loader']
+    },
+    {
+        test: /\.json$/,
+        loader: 'json-loader'
+    },
+    {
+        test: /\.json5$/,
+        loader: 'json5-loader'
+    },
+    {
+        test: /\.yaml$/,
+        use: [ 'json-loader', 'yaml-frontmatter-loader' ]
     }
 ];
 
