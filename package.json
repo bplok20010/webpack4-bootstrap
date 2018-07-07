@@ -8,7 +8,7 @@
     "clean": "rimraf lib/* dist/*",
     "eslint": "eslint src",
     "prod": "webpack --config build/webpack.prod.js",
-    "start": "webpack --config build/webpack.dev.js",
+    "start": "webpack --config build/webpack.dev.js --mode=development --abc=nobo",
     "build:prod": "webpack --config build/webpack.prod.js",
     "build": "npm-run-all  clean build:prod",
     "setup": "node build/setup"
@@ -50,6 +50,7 @@
     "json5-loader": "^1.0.1",
     "less": "^3.0.4",
     "less-loader": "^4.1.0",
+    "markdown-loader": "^3.0.0",
     "mini-css-extract-plugin": "^0.4.1",
     "node-sass": "^4.9.0",
     "npm-run-all": "^4.1.3",
@@ -64,7 +65,10 @@
     "stylelint": "^9.3.0",
     "stylelint-config-standard": "^18.2.0",
     "stylelint-webpack-plugin": "^0.10.5",
+    "twig-loader": "^0.4.1",
+    "url-loader": "^1.0.1",
     "webpack": "^4.14.0",
+    "webpack-bundle-analyzer": "^2.13.1",
     "webpack-cli": "^3.0.8",
     "webpack-merge": "^4.1.3",
     "yaml-frontmatter-loader": "^0.1.0"

@@ -1,0 +1,8 @@
+{# File: dialog.html.twig #}
+<p>{{title}}</p>
+// File: app.js
+var template = require("dialog.html.twig");
+// => returns pre-compiled template as a function and automatically includes Twig.js to your project
+
+var html = template({title: 'dialog title'});
+// => Render the view with the given context

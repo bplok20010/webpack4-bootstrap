@@ -1,3 +1,4 @@
+// https://alloyteam.github.io/eslint-config-alloy/
 module.exports = {
     extends: [
         'eslint-config-alloy',
@@ -140,5 +141,12 @@ module.exports = {
         ],
         // @fixable 禁止行尾有空格
         'no-trailing-spaces': 'off',
+        'spaced-comment': 'off',
+        'quotes': 'off',
+        'space-before-blocks': 'off',
+        'no-tabs': 'off',
+        'arrow-spacing': 'warn',
+        'comma-spacing': 'warn',
+        'key-spacing': 'warn'
     }
 };
