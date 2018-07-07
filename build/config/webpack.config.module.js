@@ -1,4 +1,5 @@
 const path = require('path');
+const paths = require('./paths');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const babelConfig = require('./babel.config');
 
@@ -67,12 +68,12 @@ const rules = [{
         ]
     },
     {
-        test: /\.(?:png|jpe?g|gif)$/,
+        test: /\.(?:png|jpe?g|gif|bmp)$/,
         use: [{
             loader: 'url-loader',
             options: {
                 limit: 8192,
-                name: 'images/[name].[ext]?[hash]',
+                name: 'static/media/[name].[hash:8].[ext]',
             }
         }]
     },
@@ -81,7 +82,7 @@ const rules = [{
         use: [{
             loader: 'file-loader',
             options: {
-                name: 'fonts/[name].[ext]?[hash]',
+                name: 'static/media/[name].[hash:8].[ext]',
             }
         }]
     },
@@ -112,6 +113,24 @@ const rules = [{
     {
         test: /\.json5$/,
         loader: 'json5-loader'
+    },
+    {
+        exclude: [
+            /\.html$/,
+            /\.ejs$/,
+            /\.(js|jsx)$/,
+            /\.sc?ss$/,
+            /\.less$/,
+            /\.json5?$/,
+            /\.(?:png|jpe?g|gif|bmp)$/,
+            /\.(?:woff2?|svg|ttf|eot)$/,
+            /\.twig$/,
+            /\.md$/,
+        ],
+        loader: 'file-loader',
+        options: {
+            name: 'static/media/[name].[hash:8].[ext]'
+        }
     }
 ];
 

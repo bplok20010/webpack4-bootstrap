@@ -1,6 +1,6 @@
 
 module.exports = {
-    runtimeChunk: false,//'single', //'single',
+    runtimeChunk: false,//'single' false ,
     splitChunks: {
         name: 'commons',
         chunks: 'all',

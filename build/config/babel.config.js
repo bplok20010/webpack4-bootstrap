@@ -1,7 +1,13 @@
+const browsers = require('./browserslist.config')
+
 module.exports = {
-    //"babelrc": false,
+    "babelrc": false,
     "presets": [
-        "env", "react", "flow"
+        ["env", {
+            "targets": {
+              "browsers": browsers
+            }
+        }], "react", "flow"
     ],
     "plugins": [
         "syntax-dynamic-import",
@@ -15,7 +21,7 @@ module.exports = {
         "transform-object-rest-spread",
         "transform-react-jsx",
         "transform-regenerator",
-        // "transform-proto-to-assign",//IE10以下不支持__proto__
+        //"transform-proto-to-assign",//IE10以下不支持__proto__
         "transform-runtime"
     ]
 }
