@@ -5,8 +5,10 @@ module.exports = {
     "presets": [
         ["env", {
             "targets": {
-              "browsers": browsers
-            }
+                "ie": 9,
+                "browsers": browsers
+            },
+            useBuiltIns: false,
         }], "react", "flow"
     ],
     "plugins": [
@@ -22,6 +24,10 @@ module.exports = {
         "transform-react-jsx",
         "transform-regenerator",
         //"transform-proto-to-assign",//IE10以下不支持__proto__
-        "transform-runtime"
+        ["transform-runtime", {
+            helpers: true,
+            polyfill: true,
+            regenerator: true,
+        }]
     ]
 }

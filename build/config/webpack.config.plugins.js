@@ -22,26 +22,14 @@ module.exports = [
     //     to: './dist'
     // }),
     //new BundleAnalyzerPlugin(),
-    new HtmlWebpackPlugin({
-        inject: true,
-        template: paths.appHtml,
-        // minify: {
-        //     removeComments: true,
-        //     collapseWhitespace: true,
-        //     removeRedundantAttributes: true,
-        //     useShortDoctype: true,
-        //     removeEmptyAttributes: true,
-        //     removeStyleLinkTypeAttributes: true,
-        //     keepClosingSlash: true,
-        //     minifyJS: true,
-        //     minifyCSS: true,
-        //     minifyURLs: true,
-        // },
-    }),
-    new ManifestPlugin(),
+    // new ManifestPlugin(),
     new MiniCssExtractPlugin({
         filename: 'static/css/[name].[contenthash:8].css',
     }),
+    // new HtmlWebpackPlugin({
+    //     inject: true,
+    //     template: paths.appHtml,
+    // }),
     // new StyleLintPlugin({
     //     files: ['**/*.s(a|c)?ss', '**/*.css', '**/*.less'],
     //     configFile: path.resolve(__dirname, './stylelint.config.js')

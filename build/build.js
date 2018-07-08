@@ -1,7 +1,7 @@
-const webpack = require("webpack");
-const config = require('./config/webpack.prod');
+process.env.NODE_ENV = 'production';
 
-process.env.NODE_ENV = 'development';
+const webpack = require("webpack");
+const config = require('./config/webpack.config.prod');
 
 // Makes the script crash on unhandled rejections instead of silently
 // ignoring them. In the future, promise rejections that are not handled will

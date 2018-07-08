@@ -4,9 +4,13 @@ const webpackPlugins = require('./webpack.config.plugins');
 const webpackOptimization = require('./webpack.config.optimization');
 
 module.exports = {
-    //devtool: 'source-map', //测试环境用eval 提高编译速度 //"source-map",
+    mode: process.env.NODE_ENV,
+    // optimization: {
+    //     nodeEnv: process.env.NODE_ENV
+    // },
+    devtool: 'source-map', //测试环境用eval 提高编译速度 //"source-map",
     entry: {
-        app: paths.appIndexJs,
+        app: [require.resolve('./polyfills.js'), paths.appIndexJs],
     },
     output: {
         path: paths.appDist,

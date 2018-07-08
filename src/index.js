@@ -18,7 +18,11 @@ class B extends A {}
 
 console.log(pkg, pkg5, html, md);
 
+const  {c,...a} = {c:4,a:3,b:6};
 
+// const jsx = <div t1="asdf" {...a}>asf</div>
+
+Promise.resolve('sdaf')
 
 export default function(templateParams) {
     if (process.env.NODE_ENV === 'development') console.log(window, history);
