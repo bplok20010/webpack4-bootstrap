@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const paths = require('./paths');
 
 module.exports = merge(common, {
-    // devtool: 'eval',
+    devtool: 'eval',
     plugins: [
         new HtmlWebpackPlugin({
             inject: true,

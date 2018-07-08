@@ -1,5 +1,4 @@
 const path = require('path');
-const paths = require('./paths');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const babelConfig = require('./babel.config');
 
@@ -120,15 +119,7 @@ const rules = [{
                 }
             }
         ] 
-    }, 
-    // {
-    //     test: /\.twig$/,
-    //     use: [{
-    //         loader: 'twig-loader',
-    //         options: {}
-    //     }]
-    // },
-    
+    },
 ];
 
 module.exports = {
