@@ -4,9 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const paths = require('./paths');
 const fs = require('fs');
 
-const plugins = [
-    new ManifestPlugin(),
-];
+const plugins = [];
 
 if( fs.existsSync(paths.appEntryHtml) ) {
     plugins.push(

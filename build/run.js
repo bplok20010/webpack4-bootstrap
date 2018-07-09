@@ -1,5 +1,7 @@
 const build = require('./lib/build');
 const watch = require('./lib/watch');
+const merge = require('webpack-merge');
+const util = require('./util');
 
 function onFulfilled(data){
     console.log(data.stats.toString({
@@ -19,10 +21,11 @@ module.exports = function(env, options = {
 
     process.env.NODE_ENV = env;
 
+    const customConfig = util.getCustomConfig();
     const config = require(`./config/webpack.config.${env}`);
 
     if( options.watch ) {
-        watch(config, (err, stats) => {
+        watch(merge(config, customConfig.webpack || {}), (err, stats) => {
             if( err ) {
                 onRejected(err);
                 return; 

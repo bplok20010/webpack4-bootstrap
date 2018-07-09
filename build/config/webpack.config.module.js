@@ -1,6 +1,7 @@
 const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const babelConfig = require('./babel.config');
+const util = require('../util');
 
 const rules = [{
         enforce: "pre",
@@ -8,8 +9,9 @@ const rules = [{
         exclude: /node_modules/,
         loader: "eslint-loader",
         options: {
+            baseConfig: require('./eslint.config.js'),
             useEslintrc: false,
-            configFile: path.resolve(__dirname, "./eslint.config.js")
+            configFile: util.customESlintFileExists() ? util.resolveCustomESlintFile() : null,
         }
     }, 
     {

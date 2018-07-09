@@ -1,8 +1,7 @@
 
 
-module.exports = (resolvePath) => {
-
+module.exports = (env, resolvePath) => {
     return {
-        appDist: resolvePath('dest')
+        appDist: resolvePath('dist')
     }
 };
