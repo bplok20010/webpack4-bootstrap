@@ -3,13 +3,15 @@ const common = require('./webpack.config.common.js');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const paths = require('./paths');
+const fs = require('fs');
 
-module.exports = merge(common, {
-    devtool: 'source-map',
-    plugins: [
+const plugins = [];
+
+if( fs.existsSync(paths.appEntryHtml) ) {
+    plugins.push(
         new HtmlWebpackPlugin({
             inject: true,
-            template: paths.appHtml,
+            template: paths.appEntryHtml,
             minify: {
                 removeComments: true,
                 collapseWhitespace: true,
@@ -22,7 +24,11 @@ module.exports = merge(common, {
                 minifyCSS: true,
                 minifyURLs: true,
             },    
-        }),
-        new ManifestPlugin(),
-    ]
+        })
+    );
+}
+
+module.exports = merge(common, {
+    devtool: 'source-map',
+    plugins
 });

@@ -10,7 +10,7 @@ module.exports = {
     },
     devtool: 'source-map', //测试环境用eval 提高编译速度 //"source-map",
     entry: {
-        app: [require.resolve('./polyfills.js'), paths.appIndexJs],
+        app: [].concat(paths.appPolyfills, paths.appEntryJs),
     },
     output: {
         path: paths.appDist,
