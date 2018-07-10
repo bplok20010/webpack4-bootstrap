@@ -28,6 +28,21 @@ function getCustomConfig() {
     return customConfig || {};
 }
 
+let babelCustomConfig = null;
+function getBabelCustomConfig() {
+    if( babelCustomConfig ) return babelCustomConfig;
+
+    const appRoot = fs.realpathSync(process.cwd());
+    const customFilePath = path.join( appRoot, '.babelrc' );
+
+    if( fs.existsSync(customFilePath) ) {
+        babelCustomConfig = fs.readFileSync(customFilePath);
+        babelCustomConfig = JSON.parse(babelCustomConfig);
+    }
+
+    return babelCustomConfig || {};
+}
+
 function resolveCustomESlintFile(){
     const appRoot = fs.realpathSync(process.cwd());
     return path.join( appRoot, '.eslintrc.json' );
@@ -43,4 +58,5 @@ module.exports = {
     getCustomConfig,
     resolveCustomESlintFile,
     customESlintFileExists,
+    getBabelCustomConfig
 }

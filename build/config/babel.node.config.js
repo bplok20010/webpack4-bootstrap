@@ -1,0 +1,25 @@
+const util = require('../util');
+const merge = require('webpack-merge');
+
+module.exports = merge({
+    "presets": [
+        ["env", {
+            "targets": {
+                "node": "current"
+            }
+        }], "flow"
+    ],
+    "plugins": [
+        "transform-async-generator-functions",
+        "transform-async-to-generator",
+        "transform-class-properties",
+        "transform-do-expressions",
+        "transform-export-extensions",
+        "transform-function-bind",
+        "transform-object-assign",
+        "transform-object-rest-spread",
+        "transform-react-jsx",
+        "transform-regenerator",
+        "transform-runtime"
+    ]
+}, util.getBabelCustomConfig())

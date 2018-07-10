@@ -1,5 +1,5 @@
-const build = require('./lib/build');
-const watch = require('./lib/watch');
+const build = require('./library/build');
+const watch = require('./library/watch');
 const merge = require('webpack-merge');
 const util = require('./util');
 

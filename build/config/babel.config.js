@@ -1,7 +1,10 @@
-const browsers = require('./browserslist.config')
+const browsers = require('./browserslist.config');
+const util = require('../util');
+const merge = require('webpack-merge');
 
-module.exports = {
+module.exports = merge({
     "babelrc": false,
+    "compact": false,
     "presets": [
         ["env", {
             "targets": {
@@ -30,4 +33,4 @@ module.exports = {
             regenerator: true,
         }]
     ]
-}
+}, util.getBabelCustomConfig())

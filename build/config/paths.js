@@ -10,7 +10,7 @@ const customConfig = getCustomConfig();
 
 const defaults = {
     appPath: resolveApp('.'),
-    appDist: resolveApp('dist'),
+    appDist: resolveApp(process.env.NODE_ENV === 'node' ? 'lib' : 'dist'),
     appPolyfills: require.resolve('./polyfills.js'),
     appEntryHtml: resolveApp('src/index.html'),
     appEntryJs: resolveApp('src/index.js'),

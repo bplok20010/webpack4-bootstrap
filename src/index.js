@@ -10,6 +10,8 @@ import md from './test.md'
 
 import App from './app';
 
+//import xx from './clib/async1'; 
+
 class A {
     static a = 3;
 }
