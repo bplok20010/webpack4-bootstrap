@@ -3,6 +3,7 @@ const paths = require('./paths');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const {VueLoaderPlugin} = require('vue-loader');
 
 module.exports = [
     new CleanWebpackPlugin(path.basename(paths.appDist),{
@@ -14,4 +15,6 @@ module.exports = [
     }),
 
     new webpack.IgnorePlugin(/^\.[\\/]locale$/, /moment$/),
+	
+	new VueLoaderPlugin(),
 ];

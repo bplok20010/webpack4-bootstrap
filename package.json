@@ -88,6 +88,9 @@
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "three.js": "^0.77.1",
+    "vue": "^2.5.16",
+    "vue-loader": "^15.2.6",
+    "vue-template-compiler": "^2.5.16",
     "write": "^1.0.3"
   },
   "browserslist": [

@@ -16,6 +16,6 @@ if( fs.existsSync(paths.appEntryHtml) ) {
 }
 
 module.exports = merge(common, {
-    devtool: 'eval',
+    //devtool: 'eval',
     plugins,
 });

@@ -14,6 +14,11 @@ const rules = [{
             configFile: util.customESlintFileExists() ? util.resolveCustomESlintFile() : null,
         }
     }, 
+	
+			{
+                test: /\.vue$/,
+				loader: 'vue-loader',
+            },
     {
         oneOf: [
             {
@@ -105,6 +110,7 @@ const rules = [{
             }, {
                 exclude: [
                     /\.html?$/,
+					/\.vue?$/,
                     /\.ejs$/,
                     /\.(js|jsx)$/,
                     /\.sc?ss$/,
